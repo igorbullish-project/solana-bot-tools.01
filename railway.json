@@ -1,1 +1,29 @@
 
+{
+  "plugins": {
+    "npm": {
+      "install": true,
+      "start": "node backend/server.js"
+    }
+  },
+  "build": {
+    "bridge": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "environments": {
+    "production": {
+      "variables": {
+        "PORT": "4000",
+        "PRIVATE_RPC_URL": "https://api.devnet.solana.com",
+        "DELEGATE_KEY_PATH": "./backend/delegate.json",
+        "OPERATOR_WALLET": "FLHsdYUaqBAUcbbFogqumkXyN3y4Ff2jhHXwXjxQZPVL",
+        "MODE": "operator",
+        "ENABLE_API_KEY": "true",
+        "MASTER_API_KEY": "change_this_master_key",
+        "CACHE_TTL_MS": "600000",
+        "GRPC_ENDPOINT": "",
+        "PROTO_PATH": "",
+        "MEV_RELAY_URL": ""
+      }
+    }
+  }
+}
